@@ -2,7 +2,7 @@
 
 namespace Gb.Application.Repositories
 {
-    public interface ICommentRepository : IRepositoryBase<DbComment>
+    public interface ICommentRepository : IRepositoryBase<CommentDb>
     {
     }
 }

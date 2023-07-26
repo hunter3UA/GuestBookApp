@@ -6,7 +6,7 @@ namespace Gb.Infrastructure.DbContexts
 {
     public class GbDbContext : DbContext
     {
-        public DbSet<DbComment> Comments { get; set; }
+        public DbSet<CommentDb> Comments { get; set; }
 
         public GbDbContext(DbContextOptions options) : base(options) { }
 

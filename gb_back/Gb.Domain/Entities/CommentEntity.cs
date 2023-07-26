@@ -1,7 +1,9 @@
-﻿namespace Gb.Domain.DbEntities
+﻿namespace Gb.Domain.Entities
 {
-    public class DbComment : BaseEntity
+    public sealed class CommentEntity
     {
+        public Guid Id { get; set; }
+
         public required string Name { get; set; }
 
         public required string Text { get; set; }
