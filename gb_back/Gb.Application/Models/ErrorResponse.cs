@@ -1,6 +1,6 @@
 ﻿namespace Gb.Application.Models
 {
-    public sealed record ErrorResponse
+    public sealed class ErrorResponse
     {
         public IEnumerable<ErrorModel> Errors { get; set; }
 

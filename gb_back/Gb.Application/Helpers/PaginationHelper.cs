@@ -1,6 +1,6 @@
 ﻿namespace Gb.Application.Helpers
 {
-    public class PaginationHelper
+    public static class PaginationHelper
     {
         private const int DefaultPageNumber = 1;
         private const int MaxPageSize = 30;

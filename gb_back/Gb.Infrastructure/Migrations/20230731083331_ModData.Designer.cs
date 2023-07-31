@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gb.Infrastructure.Migrations
 {
     [DbContext(typeof(GbDbContext))]
-    [Migration("20230726142528_Data")]
-    partial class Data
+    [Migration("20230731083331_ModData")]
+    partial class ModData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace Gb.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Gb.Domain.DbEntities.DbComment", b =>
+            modelBuilder.Entity("Gb.Domain.DbEntities.CommentDb", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -43,7 +43,7 @@ namespace Gb.Infrastructure.Migrations
 
                     b.Property<string>("Text")
                         .IsRequired()
-                        .HasMaxLength(5000)
+                        .HasMaxLength(10000)
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -53,108 +53,108 @@ namespace Gb.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("87f7a435-53e1-4fd1-9eef-be987b721ec8"),
+                            Id = new Guid("198009d2-bab7-4920-b80e-ea12503e2420"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John1",
+                            Name = "John",
+                            Text = "This is nice place!"
+                        },
+                        new
+                        {
+                            Id = new Guid("fcdb7df2-d708-4c37-bf34-bac22dea0e03"),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Ray",
+                            Text = "Everything is fine"
+                        },
+                        new
+                        {
+                            Id = new Guid("f99e743d-d194-477f-aa29-07c5a0353a2d"),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Alex",
+                            Text = "This is the best place i have ever seen"
+                        },
+                        new
+                        {
+                            Id = new Guid("665c6d9b-c3f6-4333-a4a4-fe02a9394c0f"),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Sam",
+                            Text = "You should visit this place"
+                        },
+                        new
+                        {
+                            Id = new Guid("e3bbc408-09f9-4306-b45f-7d7cb1864c9f"),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "James",
+                            Text = "Not bad, everything is ok!"
+                        },
+                        new
+                        {
+                            Id = new Guid("11aeed30-8ded-4b46-ab21-ed7fd425c39a"),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Ann",
                             Text = "Niccccccccccccccccceeeeeeeeeeeee"
                         },
                         new
                         {
-                            Id = new Guid("1f7a3a59-51d7-47e8-bcb4-0dcb817516a7"),
+                            Id = new Guid("33d24a8f-b9a5-4f55-9781-60b79d2c722a"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John2",
-                            Text = "Niccccccccccccccccceeeeeeeeeeeee"
+                            Name = "Jason",
+                            Text = "This is nice place!"
                         },
                         new
                         {
-                            Id = new Guid("569a832f-8e25-4eb0-be89-29d841c8b4ba"),
+                            Id = new Guid("a1e74d45-c4de-46ea-9589-91c7f2b86b03"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John3",
-                            Text = "Niccccccccccccccccceeeeeeeeeeeee"
+                            Name = "Alice",
+                            Text = "This is the best place i have ever seen"
                         },
                         new
                         {
-                            Id = new Guid("2cb6e5a7-1653-4df4-baae-c6405436aeb9"),
+                            Id = new Guid("0b9faf0f-af06-4c28-9e28-f4b3713d1b01"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John4",
-                            Text = "Niccccccccccccccccceeeeeeeeeeeee"
+                            Name = "Jim",
+                            Text = "Everything is fine"
                         },
                         new
                         {
-                            Id = new Guid("a40caa46-f378-4b7e-b1fa-6ed9e90464fb"),
+                            Id = new Guid("01328ed4-60cd-43bd-8691-ed9a0c300503"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John5",
-                            Text = "Niccccccccccccccccceeeeeeeeeeeee"
+                            Name = "Jakob",
+                            Text = "Not bad, everything is ok!"
                         },
                         new
                         {
-                            Id = new Guid("84280c21-49a1-4f44-a6ef-e6bdfea9b0ab"),
+                            Id = new Guid("e2353fbb-6920-4c32-9a99-9b50ffab2cc2"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John6",
-                            Text = "Niccccccccccccccccceeeeeeeeeeeee"
+                            Name = "Susan",
+                            Text = "You should visit this place"
                         },
                         new
                         {
-                            Id = new Guid("b4f4e2ae-7032-42fa-882c-47d8dece6532"),
+                            Id = new Guid("1621d240-401d-4420-9393-0fbaba633f63"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John7",
-                            Text = "Niccccccccccccccccceeeeeeeeeeeee"
+                            Name = "Ron",
+                            Text = "Good place, i will come again"
                         },
                         new
                         {
-                            Id = new Guid("93ffef0a-5bca-4f8c-a064-9b5b6645d243"),
+                            Id = new Guid("a7add580-632e-4a53-83d1-df9bc8c983e2"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John8",
-                            Text = "Niccccccccccccccccceeeeeeeeeeeee"
+                            Name = "Andy",
+                            Text = "You should visit this place"
                         },
                         new
                         {
-                            Id = new Guid("14b78268-d5c8-4fef-8f9d-0d2af152ecbe"),
+                            Id = new Guid("3c2db40f-92e9-4113-95c0-d7b2d6de7e9d"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John9",
-                            Text = "Niccccccccccccccccceeeeeeeeeeeee"
+                            Name = "Enthony",
+                            Text = "Good place, i will come again"
                         },
                         new
                         {
-                            Id = new Guid("af6519d8-2163-46a6-b5ab-01706d1dc6f6"),
+                            Id = new Guid("02e9970c-1927-49eb-bcb1-428b7b2d6d1f"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John10",
-                            Text = "Niccccccccccccccccceeeeeeeeeeeee"
-                        },
-                        new
-                        {
-                            Id = new Guid("dbed867a-a607-4dd4-93aa-c71e4619e556"),
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John11",
-                            Text = "Niccccccccccccccccceeeeeeeeeeeee"
-                        },
-                        new
-                        {
-                            Id = new Guid("0319f450-5166-4e60-93b7-4bd563acfdca"),
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John12",
-                            Text = "Niccccccccccccccccceeeeeeeeeeeee"
-                        },
-                        new
-                        {
-                            Id = new Guid("66348dfd-cf4f-46e4-a2d9-edce86838289"),
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John13",
-                            Text = "Niccccccccccccccccceeeeeeeeeeeee"
-                        },
-                        new
-                        {
-                            Id = new Guid("cb48c089-f391-4913-a255-914d179e0be5"),
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John14",
-                            Text = "Niccccccccccccccccceeeeeeeeeeeee"
-                        },
-                        new
-                        {
-                            Id = new Guid("948f7b11-58f6-4fd8-8423-56ddaafe5b19"),
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "John15",
-                            Text = "Niccccccccccccccccceeeeeeeeeeeee"
+                            Name = "Bred",
+                            Text = "This is nice place!"
                         });
                 });
 #pragma warning restore 612, 618

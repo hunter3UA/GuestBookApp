@@ -24,7 +24,6 @@ namespace Gb.Api.Extensions
             return services;
         }
 
-
         public static IServiceCollection AddExternalServices(this IServiceCollection services)
         {
             services.AddAutoMapper(ApplicationAssembly.GetAssembly());

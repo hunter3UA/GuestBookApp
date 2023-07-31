@@ -6,14 +6,14 @@ using Gb.Domain.Entities;
 
 namespace Gb.Application.MappingProfiles
 {
-    public class CommentProfile:Profile
+    public class CommentProfile : Profile
     {
         public CommentProfile()
         {
             CreateMap<AddCommentDto, AddCommentRequest>();
             CreateMap<AddCommentRequest, CommentDb>();
             CreateMap<CommentDb, CommentEntity>();
-            CreateMap<CommentEntity, CommentDto>();
+            CreateMap<CommentEntity, CommentDto>().ForMember(t => t.CreatedAt, t => t.MapFrom(k => k.CreatedAt.ToShortDateString()));
         }
     }
 }
