@@ -1,0 +1,16 @@
+version: '1.0'
+
+services:
+  gb.api:
+    build:
+      context: .
+      dockerfile: Gb.Api/Dockerfile
+    depends_on:
+     - db-server
+
+  db-server:
+    image: mcr.microsoft.com/mssql/server:latest
+    container_name: db-server
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Pa55word
